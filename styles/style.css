@@ -1,1 +1,77 @@
-body {background-color: blue;}
+header {
+	padding-top: 0px;
+	padding-bottom: 10px;
+	background-image: url("../images/burlap.jpg");	
+}
+
+h1, h2 {
+	text-align: center;
+	padding-top: 15px;
+}
+
+main {
+	font-family: sans-serif;
+	background-color: rgba(70, 222, 58, .50);
+	max-width: 650px;
+	width: 85%;
+	margin: auto;
+	padding: 10px;
+}
+
+h3 {
+	padding-top: 20px;
+}
+
+img {
+	float: right;
+	min-width: 150px;
+	width: 25%;
+	padding: 10px;
+}
+
+li {
+	padding-bottom: 8px;
+}
+
+a {
+	text-decoration: none;
+	font-family: "Arial";
+}
+
+a:hover {
+	color: black;
+	text-decoration: underline;
+}
+
+a:visited {
+	color: gray;
+}
+
+table, tr {
+	padding: 1px;
+}
+
+td, th {
+	border: none;
+	padding: 5px;
+}
+
+footer {
+	border: 1px solid black;
+	padding: 5px;
+}
+
+.content {
+	width: 90%;
+	margin: auto;
+}
+
+#which li {
+	list-style: none;
+}
+
+@media screen and (max-width: 500px) {
+	body {
+	  font-size: small;
+	}
+}
