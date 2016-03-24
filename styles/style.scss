@@ -3,135 +3,176 @@
  * =settings
  *******************
 */
+
+$dark-green: #283018;
+$metallic-gray: #729f98;
+$dark-tan: #aa863a;
+$offwhite: #f0eceb;
+
+$border-width: 2px;
+
 /*
  *******************
  * =tools
  *******************
 */
+
 /*
  *******************
  * =generic
  *******************
 */
+
 * {
   font-family: sans-serif;
-  color: #283018; }
+  color: $dark-green;
+}
 
 @media screen and (max-width: 500px) {
   body {
-    font-size: small; } }
+    font-size: small;
+  }
+}
+
 /*
  *******************
  * =elements
  *******************
 */
+
 li {
-  padding-bottom: 8px; }
+  padding-bottom: 8px;
+}
 
 a {
-  text-decoration: none; }
-  a:hover {
+  text-decoration: none;
+  &:hover {
     color: black;
-    text-decoration: underline; }
-  a:visited {
-    color: #729f98; }
+    text-decoration: underline;
+  }
+  &:visited {
+    color: $metallic-gray;
+  }
+}
 
 table, tr {
-  padding: 1px; }
+  padding: 1px;
+}
 
 td, th {
   border: none;
-  padding: 5px; }
+  padding: 5px;
+}
 
 /*
  *******************
  * =objects
  *******************
 */
+
 .wrapper {
   margin: auto;
   padding: 0;
   max-width: 650px;
-  width: 85%; }
+  width: 85%;
+}
 
 .nav {
-  background-color: #aa863a;
-  border-bottom: 2px solid #283018; }
+  background-color: $dark-tan;
+  border-bottom: $border-width solid $dark-green;
+}
 
 .header {
   position: relative;
   top: 0;
   left: 0;
-  border-bottom: 2px solid #283018; }
+  border-bottom: $border-width solid $dark-green;
+}
 
 .main {
-  background-color: #f0eceb;
-  padding: 20px 10px; }
+  background-color: $offwhite;
+  padding: 20px 10px;
+}
 
 .content {
   width: 90%;
   margin: 20px auto;
-  border-top: 1px solid #aa863a; }
+  border-top: 1px solid $dark-tan;
+}
 
 .footer {
-  background-color: #aa863a;
-  border-top: 2px solid #283018; }
+  background-color: $dark-tan;
+  border-top: $border-width solid $dark-green;
+}
 
 /*
  *******************
  * =components
  *******************
 */
+
 .nav__links {
   display: inline-block;
   position: relative;
   left: 50%;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+}
 
 .nav__links li {
   display: inline-block;
   margin: 10px 15px;
-  padding: 0; }
+  padding: 0;
+}
 
 .nav__links a {
-  color: #f0eceb;
-  text-decoration: none; }
-  .nav__links a:hover {
+  color: $offwhite;
+  text-decoration: none;
+  &:hover {
     color: white;
-    text-decoration: underline; }
+    text-decoration: underline;
+  }
+}
 
-.header__title {
+.header__title, {
   overflow: hidden;
-  background-color: #729f98;
+  background-color: $metallic-gray;
   text-align: center;
-  width: 75%; }
+  width: 75%;
+}
 
 .header__image {
   position: absolute;
   top: 0;
   right: 0;
   width: 25%;
-  border-left: #283018 solid 2px;
-  border-bottom: #283018 solid 2px; }
+  border-left: $dark-green solid $border-width;
+  border-bottom: $dark-green solid $border-width;
+}
 
 .content__heading {
-  color: dark-green; }
+  color: dark-green;
+}
 
 .footer__text {
   text-align: right;
   padding: 20px;
-  margin: 0; }
+  margin: 0;
+}
 
 /*
  *******************
  * =trumps
  *******************
 */
+
 .content:first-child {
-  border: none !important; }
+  border: none !important;
+}
 
 .footer a {
-  color: #f0eceb; }
+  color: $offwhite;
+}
 
-/*# sourceMappingURL=style.css.map */
+
+
