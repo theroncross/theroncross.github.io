@@ -85,11 +85,12 @@ table {
 
 .wrapper {
   padding: 0;
-  @media screen and (max-width: $large-break) {
+
+  @media (max-width: $large-break) {
     width: 100%;
   }
 
-  @media screen and (min-width: $large-break + 1) {
+  @media (min-width: $large-break + 1) {
     @include rem(max-width, 700px);
     width: 85%;
     margin: auto;
