@@ -4,18 +4,23 @@
  *******************
 */
 
-$dark-green: #283018;
+$dark-green: #283a18;
 $metallic-gray: #729f98;
 $dark-tan: #aa863a;
 $offwhite: #f0eceb;
 
 $border-width: 2px;
+$small-break: 300px;
+$large-break: 600px;
 
 /*
  *******************
  * =tools
  *******************
 */
+
+@import 'normalize';
+@import 'rem';
 
 /*
  *******************
@@ -28,12 +33,17 @@ $border-width: 2px;
   color: $dark-green;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: $small-break) {
   body {
-    font-size: small;
+    @include rem(font-size, 12px);
   }
 }
 
+@media screen and (min-width: $small-break + 1) and (max-width: $large-break) {
+  body {
+    @include rem(font-size, 14px);
+  }
+}
 /*
  *******************
  * =elements
@@ -41,7 +51,7 @@ $border-width: 2px;
 */
 
 li {
-  padding-bottom: 8px;
+  @include rem(padding-bottom, 1px);
 }
 
 a {
@@ -55,13 +65,16 @@ a {
   }
 }
 
-table, tr {
-  padding: 1px;
-}
+table {
+  @include rem(padding, 1px);
+  @include rem(border, 1px solid $metallic-gray);
 
-td, th {
-  border: none;
-  padding: 5px;
+  td, th {
+    border: none;
+    @include rem(padding, 8px);
+    width: 33%;
+    text-align: center;
+  }
 }
 
 /*
@@ -71,10 +84,16 @@ td, th {
 */
 
 .wrapper {
-  margin: auto;
   padding: 0;
-  max-width: 650px;
-  width: 85%;
+  @media screen and (max-width: $large-break) {
+    width: 100%;
+  }
+
+  @media screen and (min-width: $large-break + 1) {
+    @include rem(max-width, 700px);
+    width: 85%;
+    margin: auto;
+  }
 }
 
 .nav {
@@ -86,18 +105,19 @@ td, th {
   position: relative;
   top: 0;
   left: 0;
+  background-color: $metallic-gray;
   border-bottom: $border-width solid $dark-green;
 }
 
 .main {
   background-color: $offwhite;
-  padding: 20px 10px;
+  @include rem(padding, 20px 10px);
 }
 
 .content {
   width: 90%;
-  margin: 20px auto;
-  border-top: 1px solid $dark-tan;
+  @include rem(margin, 20px auto);
+  @include rem(border-top, 1px solid $dark-tan);
 }
 
 .footer {
@@ -114,18 +134,20 @@ td, th {
 .nav__links {
   display: inline-block;
   position: relative;
-  left: 50%;
+  width: 35%;
+  left: 65%;
   margin: 0;
   padding: 0;
 }
 
 .nav__links li {
   display: inline-block;
-  margin: 10px 15px;
-  padding: 0;
+  @include rem(margin, 5px);
+  @include rem(padding, 16px 0);
 }
 
 .nav__links a {
+  @include rem(font-size, 14px);
   color: $offwhite;
   text-decoration: none;
   &:hover {
@@ -134,11 +156,19 @@ td, th {
   }
 }
 
+
 .header__title, {
   overflow: hidden;
-  background-color: $metallic-gray;
   text-align: center;
   width: 75%;
+
+  h1 {
+    @include rem(margin-bottom, 10px);
+  }
+
+  h2 {
+    @include rem(margin-top, 10px);
+  }
 }
 
 .header__image {
@@ -146,17 +176,19 @@ td, th {
   top: 0;
   right: 0;
   width: 25%;
-  border-left: $dark-green solid $border-width;
-  border-bottom: $dark-green solid $border-width;
+  @include rem(max-height, 135px);
+  @include rem(max-width, 135px);
+  border-left: $border-width solid $dark-green;
+  border-bottom: $border-width solid $dark-green;
 }
 
 .content__heading {
-  color: dark-green;
+  color: $dark-green;
 }
 
 .footer__text {
   text-align: right;
-  padding: 20px;
+  @include rem(padding, 20px);
   margin: 0;
 }
 
