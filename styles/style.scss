@@ -10,8 +10,8 @@ $dark-tan: #aa863a;
 $offwhite: #f0eceb;
 
 $border-width: 2px;
-$small-break: 300px;
-$large-break: 600px;
+$small-break: 380px;
+$large-break: 796px;
 
 /*
  *******************
@@ -28,22 +28,23 @@ $large-break: 600px;
  *******************
 */
 
-* {
+html {
   font-family: sans-serif;
   color: $dark-green;
 }
 
-@media screen and (max-width: $small-break) {
+@media only screen and (max-width: $large-break) {
   body {
     @include rem(font-size, 12px);
   }
 }
 
-@media screen and (min-width: $small-break + 1) and (max-width: $large-break) {
+@media only screen and (min-width: $large-break + 1) {
   body {
-    @include rem(font-size, 14px);
+    @include rem(font-size, 16px);
   }
 }
+
 /*
  *******************
  * =elements
@@ -52,6 +53,7 @@ $large-break: 600px;
 
 li {
   @include rem(padding-bottom, 1px);
+  line-height: 1.4em;
 }
 
 a {
@@ -66,11 +68,11 @@ a {
 }
 
 table {
-  @include rem(padding, 1px);
-  @include rem(border, 1px solid $metallic-gray);
+  @include rem(padding, 5px);
 
   td, th {
-    border: none;
+    border: 1px solid $dark-tan;
+    border-radius: 10px;
     @include rem(padding, 8px);
     width: 33%;
     text-align: center;
@@ -84,39 +86,37 @@ table {
 */
 
 .wrapper {
+  position: relative;
   padding: 0;
-  @media screen and (max-width: $large-break) {
+
+  @media only screen and (max-width: $large-break) {
     width: 100%;
+    margin: 0;
   }
 
-  @media screen and (min-width: $large-break + 1) {
-    @include rem(max-width, 700px);
+  @media only screen and (min-width: $large-break + 1) {
+    @include rem(max-width, 950px);
     width: 85%;
     margin: auto;
   }
 }
 
-.nav {
-  background-color: $dark-tan;
-  border-bottom: $border-width solid $dark-green;
-}
-
 .header {
-  position: relative;
-  top: 0;
-  left: 0;
   background-color: $metallic-gray;
   border-bottom: $border-width solid $dark-green;
+  // keep header from collapsing
+
 }
 
 .main {
   background-color: $offwhite;
-  @include rem(padding, 20px 10px);
+  @include rem(padding, 20px 0);
 }
 
 .content {
   width: 90%;
-  @include rem(margin, 20px auto);
+  @include rem(margin, 0 auto);
+  @include rem(padding, 30px 0);
   @include rem(border-top, 1px solid $dark-tan);
 }
 
@@ -130,20 +130,33 @@ table {
  * =components
  *******************
 */
+.header__text {
+  display: inline-block;
+  float: right;
+}
+
+.header__nav {
+  background-color: $dark-tan;
+  border-bottom: $border-width solid $dark-green;
+  &:after {
+    display: block;
+    clear: both;
+    content: " ";
+    height: 0;
+    overflow: hidden;
+  }
+}
 
 .nav__links {
-  display: inline-block;
-  position: relative;
-  width: 35%;
-  left: 65%;
-  margin: 0;
+  float: right;
+  @include rem(margin, 0 10px);
   padding: 0;
 }
 
 .nav__links li {
   display: inline-block;
   @include rem(margin, 5px);
-  @include rem(padding, 16px 0);
+  @include rem(padding, 14px 0);
 }
 
 .nav__links a {
@@ -156,34 +169,33 @@ table {
   }
 }
 
+.header__image {
+  float: left;
+  @include rem(width, 160px);
+  @include rem(margin, -12px 20px);
+  border: $border-width solid $dark-green;
+  border-radius: 20px;
+}
 
 .header__title, {
-  overflow: hidden;
   text-align: center;
-  width: 75%;
+  @include rem(margin, 30px 0);
 
+  h1, h2 { @include rem(margin, 0); }
   h1 {
-    @include rem(margin-bottom, 10px);
+    @include rem(padding-bottom, 7px);
   }
 
   h2 {
-    @include rem(margin-top, 10px);
+    @include rem(padding-top, 7px);
   }
-}
-
-.header__image {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 25%;
-  @include rem(max-height, 135px);
-  @include rem(max-width, 135px);
-  border-left: $border-width solid $dark-green;
-  border-bottom: $border-width solid $dark-green;
 }
 
 .content__heading {
   color: $dark-green;
+  text-align: center;
+  width: 85%;
+  @include rem(margin, 0 auto);
 }
 
 .footer__text {

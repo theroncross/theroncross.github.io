@@ -375,18 +375,18 @@ textarea {
  * =generic
  *******************
 */
-* {
+html {
   font-family: sans-serif;
   color: #283a18; }
 
-@media screen and (max-width: 300px) {
+@media only screen and (max-width: 796px) {
   body {
     font-size: 12px;
     font-size: 0.75rem; } }
-@media screen and (min-width: 301px) and (max-width: 600px) {
+@media only screen and (min-width: 797px) {
   body {
-    font-size: 14px;
-    font-size: 0.875rem; } }
+    font-size: 16px;
+    font-size: 1rem; } }
 /*
  *******************
  * =elements
@@ -394,7 +394,8 @@ textarea {
 */
 li {
   padding-bottom: 1px;
-  padding-bottom: 0.0625rem; }
+  padding-bottom: 0.0625rem;
+  line-height: 1.4em; }
 
 a {
   text-decoration: none; }
@@ -405,12 +406,11 @@ a {
     color: #729f98; }
 
 table {
-  padding: 1px;
-  padding: 0.0625rem;
-  border: 1px solid #729f98;
-  border: 0.0625rem solid #729f98; }
+  padding: 5px;
+  padding: 0.3125rem; }
   table td, table th {
-    border: none;
+    border: 1px solid #aa863a;
+    border-radius: 10px;
     padding: 8px;
     padding: 0.5rem;
     width: 33%;
@@ -422,37 +422,34 @@ table {
  *******************
 */
 .wrapper {
+  position: relative;
   padding: 0; }
-  @media screen and (max-width: 600px) {
+  @media only screen and (max-width: 796px) {
     .wrapper {
-      width: 100%; } }
-  @media screen and (min-width: 601px) {
+      width: 100%;
+      margin: 0; } }
+  @media only screen and (min-width: 797px) {
     .wrapper {
-      max-width: 700px;
-      max-width: 43.75rem;
+      max-width: 950px;
+      max-width: 59.375rem;
       width: 85%;
       margin: auto; } }
 
-.nav {
-  background-color: #aa863a;
-  border-bottom: 2px solid #283a18; }
-
 .header {
-  position: relative;
-  top: 0;
-  left: 0;
   background-color: #729f98;
   border-bottom: 2px solid #283a18; }
 
 .main {
   background-color: #f0eceb;
-  padding: 20px 10px;
-  padding: 1.25rem 0.625rem; }
+  padding: 20px 0;
+  padding: 1.25rem 0; }
 
 .content {
   width: 90%;
-  margin: 20px auto;
-  margin: 1.25rem auto;
+  margin: 0 auto;
+  margin: 0 auto;
+  padding: 30px 0;
+  padding: 1.875rem 0;
   border-top: 1px solid #aa863a;
   border-top: 0.0625rem solid #aa863a; }
 
@@ -465,20 +462,32 @@ table {
  * =components
  *******************
 */
-.nav__links {
+.header__text {
   display: inline-block;
-  position: relative;
-  width: 35%;
-  left: 65%;
-  margin: 0;
+  float: right; }
+
+.header__nav {
+  background-color: #aa863a;
+  border-bottom: 2px solid #283a18; }
+  .header__nav:after {
+    display: block;
+    clear: both;
+    content: " ";
+    height: 0;
+    overflow: hidden; }
+
+.nav__links {
+  float: right;
+  margin: 0 10px;
+  margin: 0 0.625rem;
   padding: 0; }
 
 .nav__links li {
   display: inline-block;
   margin: 5px;
   margin: 0.3125rem;
-  padding: 16px 0;
-  padding: 1rem 0; }
+  padding: 14px 0;
+  padding: 0.875rem 0; }
 
 .nav__links a {
   font-size: 14px;
@@ -489,31 +498,35 @@ table {
     color: white;
     text-decoration: underline; }
 
-.header__title {
-  overflow: hidden;
-  text-align: center;
-  width: 75%; }
-  .header__title h1 {
-    margin-bottom: 10px;
-    margin-bottom: 0.625rem; }
-  .header__title h2 {
-    margin-top: 10px;
-    margin-top: 0.625rem; }
-
 .header__image {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 25%;
-  max-height: 135px;
-  max-height: 8.4375rem;
-  max-width: 135px;
-  max-width: 8.4375rem;
-  border-left: 2px solid #283a18;
-  border-bottom: 2px solid #283a18; }
+  float: left;
+  width: 160px;
+  width: 10rem;
+  margin: -12px 20px;
+  margin: -0.75rem 1.25rem;
+  border: 2px solid #283a18;
+  border-radius: 20px; }
+
+.header__title {
+  text-align: center;
+  margin: 30px 0;
+  margin: 1.875rem 0; }
+  .header__title h1, .header__title h2 {
+    margin: 0;
+    margin: 0; }
+  .header__title h1 {
+    padding-bottom: 7px;
+    padding-bottom: 0.4375rem; }
+  .header__title h2 {
+    padding-top: 7px;
+    padding-top: 0.4375rem; }
 
 .content__heading {
-  color: #283a18; }
+  color: #283a18;
+  text-align: center;
+  width: 85%;
+  margin: 0 auto;
+  margin: 0 auto; }
 
 .footer__text {
   text-align: right;
