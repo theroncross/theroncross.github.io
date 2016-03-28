@@ -392,11 +392,6 @@ html {
  * =elements
  *******************
 */
-li {
-  padding-bottom: 1px;
-  padding-bottom: 0.0625rem;
-  line-height: 1.4em; }
-
 a {
   text-decoration: none; }
   a:hover {
@@ -452,6 +447,10 @@ table {
   padding: 1.875rem 0;
   border-top: 1px solid #aa863a;
   border-top: 0.0625rem solid #aa863a; }
+  .content li {
+    padding-bottom: 1px;
+    padding-bottom: 0.0625rem;
+    line-height: 1.4em; }
 
 .footer {
   background-color: #aa863a;
@@ -478,8 +477,8 @@ table {
 
 .nav__links {
   float: right;
-  margin: 0 10px;
-  margin: 0 0.625rem;
+  margin: 0 14px;
+  margin: 0 0.875rem;
   padding: 0; }
 
 .nav__links li {
@@ -490,8 +489,8 @@ table {
   padding: 0.875rem 0; }
 
 .nav__links a {
-  font-size: 14px;
-  font-size: 0.875rem;
+  font-size: 18px;
+  font-size: 1.125rem;
   color: #f0eceb;
   text-decoration: none; }
   .nav__links a:hover {
@@ -512,14 +511,19 @@ table {
   margin: 30px 0;
   margin: 1.875rem 0; }
   .header__title h1, .header__title h2 {
+    font-variant: small-caps;
     margin: 0;
     margin: 0; }
   .header__title h1 {
+    font-size: 2.2rem;
     padding-bottom: 7px;
     padding-bottom: 0.4375rem; }
   .header__title h2 {
+    font-size: 1.7rem;
     padding-top: 7px;
     padding-top: 0.4375rem; }
+  .header__title h2 em {
+    text-decoration: underline; }
 
 .content__heading {
   color: #283a18;
