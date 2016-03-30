@@ -417,8 +417,10 @@ table {
  *******************
 */
 .wrapper {
-  position: relative;
-  padding: 0; }
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  padding: 0.625rem; }
   @media only screen and (max-width: 796px) {
     .wrapper {
       width: 100%;
@@ -430,19 +432,41 @@ table {
       width: 85%;
       margin: auto; } }
 
-.header {
-  background-color: #729f98;
+.image {
+  flex: 1 1 15%;
+  width: 150px;
+  width: 9.375rem;
+  height: 150px;
+  height: 9.375rem;
+  order: 1;
+  border-right: 2px solid #283a18;
   border-bottom: 2px solid #283a18; }
 
+.header {
+  flex: 1 1 84%;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #729f98;
+  border-bottom: 2px solid #283a18;
+  order: 2; }
+
+.nav {
+  flex: 1 1 15%;
+  width: 150px;
+  width: 9.375rem;
+  background-color: #aa863a;
+  border-right: 2px solid #283a18;
+  order: 3; }
+
 .main {
+  flex: 1 1 84%;
+  flex-direction: column;
+  justify-content: center;
   background-color: #f0eceb;
-  padding: 20px 0;
-  padding: 1.25rem 0; }
+  order: 3; }
 
 .content {
-  width: 90%;
-  margin: 0 auto;
-  margin: 0 auto;
+  flex: 1 1 60%;
   padding: 30px 0;
   padding: 1.875rem 0;
   border-top: 1px solid #aa863a;
@@ -453,30 +477,20 @@ table {
     line-height: 1.4em; }
 
 .footer {
+  width: 100%;
+  flex: 1 1 auto;
   background-color: #aa863a;
-  border-top: 2px solid #283a18; }
+  border-top: 2px solid #283a18;
+  order: 5; }
 
 /*
  *******************
  * =components
  *******************
 */
-.header__text {
-  display: inline-block;
-  float: right; }
-
-.header__nav {
-  background-color: #aa863a;
-  border-bottom: 2px solid #283a18; }
-  .header__nav:after {
-    display: block;
-    clear: both;
-    content: " ";
-    height: 0;
-    overflow: hidden; }
-
 .nav__links {
-  float: right;
+  flex: 1 0 auto;
+  flex-direction: column;
   margin: 0 14px;
   margin: 0 0.875rem;
   padding: 0; }
@@ -484,9 +498,7 @@ table {
 .nav__links li {
   display: inline-block;
   margin: 5px;
-  margin: 0.3125rem;
-  padding: 14px 0;
-  padding: 0.875rem 0; }
+  margin: 0.3125rem; }
 
 .nav__links a {
   font-size: 18px;
@@ -497,31 +509,19 @@ table {
     color: white;
     text-decoration: underline; }
 
-.header__image {
-  float: left;
-  width: 160px;
-  width: 10rem;
-  margin: -12px 20px;
-  margin: -0.75rem 1.25rem;
-  border: 2px solid #283a18;
-  border-radius: 20px; }
+.header__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
 
 .header__title {
-  text-align: center;
-  margin: 30px 0;
-  margin: 1.875rem 0; }
+  margin: 0;
+  margin: 0; }
   .header__title h1, .header__title h2 {
     font-variant: small-caps;
     margin: 0;
     margin: 0; }
-  .header__title h1 {
-    font-size: 2.2rem;
-    padding-bottom: 7px;
-    padding-bottom: 0.4375rem; }
-  .header__title h2 {
-    font-size: 1.7rem;
-    padding-top: 7px;
-    padding-top: 0.4375rem; }
   .header__title h2 em {
     text-decoration: underline; }
 

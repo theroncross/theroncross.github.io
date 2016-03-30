@@ -10,6 +10,9 @@ $dark-tan: #aa863a;
 $offwhite: #f0eceb;
 
 $border-width: 2px;
+$small-col: 15%;
+$large-col: 84%;
+
 $small-break: 380px;
 $large-break: 796px;
 
@@ -81,8 +84,9 @@ table {
 */
 
 .wrapper {
-  position: relative;
-  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  @include rem(padding, 10px);
 
   @media only screen and (max-width: $large-break) {
     width: 100%;
@@ -96,19 +100,43 @@ table {
   }
 }
 
+.image {
+  flex: 1 1 $small-col;
+  @include rem(width, 150px);
+  @include rem(height, 150px);
+  order: 1;
+  border-right: $border-width solid $dark-green;
+  border-bottom: $border-width solid $dark-green;
+
+}
+
 .header {
+  flex: 1 1 $large-col;
+  align-items: center;
+  justify-content: space-around;
   background-color: $metallic-gray;
   border-bottom: $border-width solid $dark-green;
+  order: 2;
+}
+
+.nav {
+  flex: 1 1 $small-col;
+  @include rem(width, 150px);
+  background-color: $dark-tan;
+  border-right: $border-width solid $dark-green;
+  order: 3;
 }
 
 .main {
+  flex: 1 1 $large-col;
+  flex-direction: column;
+  justify-content: center;
   background-color: $offwhite;
-  @include rem(padding, 20px 0);
+  order: 3;
 }
 
 .content {
-  width: 90%;
-  @include rem(margin, 0 auto);
+  flex: 1 1 60%;
   @include rem(padding, 30px 0);
   @include rem(border-top, 1px solid $dark-tan);
 
@@ -119,8 +147,11 @@ table {
 }
 
 .footer {
+  width: 100%;
+  flex: 1 1 auto;
   background-color: $dark-tan;
   border-top: $border-width solid $dark-green;
+  order: 5;
 }
 
 /*
@@ -129,25 +160,9 @@ table {
  *******************
 */
 
-.header__text {
-  display: inline-block;
-  float: right;
-}
-
-.header__nav {
-  background-color: $dark-tan;
-  border-bottom: $border-width solid $dark-green;
-  &:after {
-    display: block;
-    clear: both;
-    content: " ";
-    height: 0;
-    overflow: hidden;
-  }
-}
-
 .nav__links {
-  float: right;
+  flex: 1 0 auto;
+  flex-direction: column;
   @include rem(margin, 0 14px);
   padding: 0;
 }
@@ -155,7 +170,6 @@ table {
 .nav__links li {
   display: inline-block;
   @include rem(margin, 5px);
-  @include rem(padding, 14px 0);
 }
 
 .nav__links a {
@@ -168,31 +182,19 @@ table {
   }
 }
 
-.header__image {
-  float: left;
-  @include rem(width, 160px);
-  @include rem(margin, -12px 20px);
-  border: $border-width solid $dark-green;
-  border-radius: 20px;
+.header__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.header__title, {
-  text-align: center;
-  @include rem(margin, 30px 0);
+.header__title {
+  @include rem(margin, 0);
 
   h1, h2 {
     font-variant: small-caps;
     @include rem(margin, 0);
-  }
-
-  h1 {
-    font-size: 2.2rem;
-    @include rem(padding-bottom, 7px);
-  }
-
-  h2 {
-    font-size: 1.7rem;
-    @include rem(padding-top, 7px);
   }
 
   h2 em {
