@@ -10,6 +10,9 @@ $dark-tan: #aa863a;
 $offwhite: #f0eceb;
 
 $border-width: 2px;
+$small-col: 15%;
+$large-col: 84%;
+
 $small-break: 380px;
 $large-break: 796px;
 
@@ -74,6 +77,11 @@ table {
   }
 }
 
+
+li {
+  line-height: 1.4em;
+}
+
 /*
  *******************
  * =objects
@@ -81,8 +89,9 @@ table {
 */
 
 .wrapper {
-  position: relative;
-  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  @include rem(padding, 0);
 
   @media only screen and (max-width: $large-break) {
     width: 100%;
@@ -96,30 +105,55 @@ table {
   }
 }
 
+.image {
+  order: 1;
+  flex: 1 1 $small-col;
+  @include rem(width, $small-col);
+  @include rem(height, $small-col);
+  border-right: $border-width solid $dark-green;
+  border-bottom: $border-width solid $dark-green;
+
+}
+
 .header {
+  order: 2;
+  display: flex;
+  flex: 1 1 $large-col;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background-color: $metallic-gray;
   border-bottom: $border-width solid $dark-green;
 }
 
+.nav {
+  order: 3;
+  flex: 1 1 $small-col;
+  background-color: $dark-tan;
+  border-right: $border-width solid $dark-green;
+}
+
 .main {
+  order: 4;
+  display: flex;
+  flex: 1 1 $large-col;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
   background-color: $offwhite;
-  @include rem(padding, 20px 0);
 }
 
 .content {
-  width: 90%;
-  @include rem(margin, 0 auto);
-  @include rem(padding, 30px 0);
+  flex: 1 1 60%;
+  width: 80%;
   @include rem(border-top, 1px solid $dark-tan);
-
-  li {
-    @include rem(padding-bottom, 1px);
-    line-height: 1.4em;
-  }
+  @include rem(padding, 15px 0);
 }
 
 .footer {
-  background-color: $dark-tan;
+  order: 5;
+  flex: 1 1 100%;
+  background-color: $metallic-gray;
   border-top: $border-width solid $dark-green;
 }
 
@@ -129,33 +163,17 @@ table {
  *******************
 */
 
-.header__text {
-  display: inline-block;
-  float: right;
-}
-
-.header__nav {
-  background-color: $dark-tan;
-  border-bottom: $border-width solid $dark-green;
-  &:after {
-    display: block;
-    clear: both;
-    content: " ";
-    height: 0;
-    overflow: hidden;
-  }
-}
-
 .nav__links {
-  float: right;
+  display: flex;
+  flex-wrap: wrap;
   @include rem(margin, 0 14px);
   padding: 0;
 }
 
 .nav__links li {
+  flex: auto;
   display: inline-block;
   @include rem(margin, 5px);
-  @include rem(padding, 14px 0);
 }
 
 .nav__links a {
@@ -168,31 +186,10 @@ table {
   }
 }
 
-.header__image {
-  float: left;
-  @include rem(width, 160px);
-  @include rem(margin, -12px 20px);
-  border: $border-width solid $dark-green;
-  border-radius: 20px;
-}
-
-.header__title, {
-  text-align: center;
-  @include rem(margin, 30px 0);
-
+.header {
   h1, h2 {
     font-variant: small-caps;
     @include rem(margin, 0);
-  }
-
-  h1 {
-    font-size: 2.2rem;
-    @include rem(padding-bottom, 7px);
-  }
-
-  h2 {
-    font-size: 1.7rem;
-    @include rem(padding-top, 7px);
   }
 
   h2 em {
@@ -203,8 +200,6 @@ table {
 .content__heading {
   color: $dark-green;
   text-align: center;
-  width: 85%;
-  @include rem(margin, 0 auto);
 }
 
 .footer__text {
