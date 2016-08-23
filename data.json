@@ -1,0 +1,150 @@
+{
+  "education": [{
+    "school": "University of Oregon",
+    "degree": "BS General Science",
+    "gradDate": "2002",
+    "location": "Eugene, OR",
+    "description": "In addition to completing coursework in the physical and biological sciences, I played saxophone in multiple school bands, worked on the Urban Farm, and prepared lecture demonstrations for Chemistry courses."
+  }, {
+    "school": "University of Illinois",
+    "degree": "MA Education Leadership",
+    "gradDate": "2006",
+    "location": "Springfield, IL",
+    "description": "Carried out research on methods for improving teaching practice in a collaborative team, with a focus on student paired learning and empathy."
+  }, {
+    "school": "Dev Bootcamp",
+    "degree": "Web Development Training",
+    "gradDate": "2016",
+    "location": "Chicago, IL",
+    "description": "Dev Bootcamp is a 19-week intensive training program for web developers, rooted in learning full stack development skills and empathetic team cooperation."
+  }],
+  "experience": [{
+    "title": "Physical Science Teacher",
+    "startDate": "2003",
+    "endDate": "2004",
+    "company": "Walter L. Cohen High School",
+    "location": "New Orleans, LA",
+    "contributions": [],
+    "lat": 29.93072,
+    "lng": -90.09469
+  }, {
+    "title": "Physical Science Teacher",
+    "startDate": "2004",
+    "endDate": "2005",
+    "company": "Marshfield High School",
+    "location": "Coos Bay, OR",
+    "contributions": [],
+    "lat": 43.360370,
+    "lng": -124.221318
+  }, {
+    "title": "Physics Teacher",
+    "startDate": "2005",
+    "endDate": "2006",
+    "company": "Roseburg High School",
+    "location": "Roseburg, OR",
+    "contributions": [
+      "Delivered challenging district curriculum to diverse student population"
+    ],
+    "lat": 43.216472,
+    "lng": -123.353720
+  }, {
+    "title": "Physics Teacher",
+    "startDate": "2006",
+    "endDate": "2008",
+    "company": "Lusher Charter High School",
+    "location": "New Orleans, LA",
+    "contributions": [
+      "Taught introductory and AP Physics and sustainable design electives",
+      "Founded and maintained the school's urban farm",
+      "Coached Cross Country, Swimming and Track and Field"
+    ],
+    "lat": 29.935357,
+    "lng": -90.113887
+  }, {
+    "title": "Chemistry Teacher",
+    "startDate": "2008",
+    "endDate": "2009",
+    "company": "Sammamish High School",
+    "location": "Bellevue, WA",
+    "contributions": [
+      "Delivered challenging district curriculum to diverse student population"
+    ],
+    "lat": 47.609044,
+    "lng": -122.152562
+  }, {
+    "title": "Physics Teacher",
+    "startDate": "2009",
+    "endDate": "2015",
+    "company": "Eastside Preparatory School",
+    "location": "Kirkland, WA",
+    "contributions": [
+      "Designed and taught courses in physics, programming, and math",
+      "Coached Cross Country and Track and Field",
+      "Co-founded and managed school Makerspace"
+    ],
+    "lat": 47.643570,
+    "lng": -122.198578
+  }, {
+    "title": "Physics Teacher",
+    "startDate": "2015",
+    "endDate": "2016",
+    "company": "Escuela Campo Alegre",
+    "location": "Caracas, Venezuela",
+    "contributions": [
+      "Designed and taught IB Physics and programming electives in an economically and culturally diverse international environment",
+      "Served on committee for complete redesign of core science courses"
+    ],
+    "lat": 10.482138,
+    "lng": -66.869273
+  }],
+  "skills": {
+    "sortCriterion": "name",
+    "data": [
+      {
+        "name": "JavaScript",
+        "rating": 4
+      }, {
+        "name": "React",
+        "rating": 3
+      }, {
+        "name": "Redux",
+        "rating": 2
+      }, {
+        "name": "HTML5",
+        "rating": 3
+      }, {
+        "name": "CSS3",
+        "rating": 3
+      }, {
+        "name": "Sass",
+        "rating": 3
+      }, {
+        "name": "Ruby",
+        "rating": 4
+      }, {
+        "name": "Rails",
+        "rating": 3
+      }, {
+        "name": "jQuery",
+        "rating": 3
+      }, {
+        "name": "d3",
+        "rating": 1
+      }, {
+        "name": "Ember",
+        "rating": 1
+      }
+    ]
+  },
+  "projects": [{
+    "name": "Resume/Portfolio",
+    "description": "A basic resume and portfolio, implemented in React and Redux, including D3 visualizations and multiple API integrations",
+    "url": "http://www.theroncross.com",
+    "source": "https://github.com/theroncross/resume"
+  }, {
+    "name": "Progress",
+    "description": "Dev Bootcamp final project - a goal setting and tracking single page application",
+    "url": "https://dudley-mountie-63056.herokuapp.com/",
+    "source": "https://github.com/theroncross/progress"
+  }]
+}
